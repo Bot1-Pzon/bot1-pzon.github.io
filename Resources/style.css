@@ -1,0 +1,268 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: rgb(8, 53, 95);
+}
+
+header {
+	background-color: rgb(0, 22, 46);
+	color: #fff;
+
+	text-align: center;
+
+	width: 100%;
+	top: 0;
+
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+/* Per il titolo principale */
+h1.main_title {
+	color: black;
+	-webkit-text-stroke-width: 0.1px;
+	-webkit-text-stroke-color: white;
+
+	text-align: center;
+
+	font-size: 65px;
+	font-family: "Impact";
+
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* Per il sottotitolo al titolo principale */
+h1.main_title + h2.subtitle {
+	text-align: center;
+	margin: 0;
+	font-size: 16px;
+}
+
+main {
+	background-color: rgb(64, 87, 126);
+	box-shadow: 0 0 100px rgba(0, 0, 0, 0.932);
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	border-radius: 8px;
+
+	/* Per far apparire il <main> a dispositivi con schermi grandi */
+	@media screen and (min-width: 1000px) {
+		max-width: 70vw;
+		margin: 0 auto;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		padding: 25px;
+	}
+}
+
+main section {
+	margin-bottom: 40px;
+}
+
+/* Per mette per il margine inferiore dell'ultima sezione */
+main section:last-child {
+	margin-bottom: 0;
+}
+
+/* Per annullare il margine inferiore a qualsiasi ultimo elemento di ogni sezione */
+section > :last-child:nth-last-of-type(n) {
+	margin-bottom: 0;
+}
+
+/* Per i titoli di sezione */
+section > h2.section_heading {
+	font-weight: bold;
+	font-size: 30px;
+
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+/* Per i sottotitoli di sezione */
+section > h2.section_heading + h3.section_subtitle {
+	font-style: italic;
+	font-size: 15px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+/* Per il margine di ogni titolo di sezione con un sottotitolo */
+h2.section_heading:not(:last-child):has(+ h3.section_subtitle) {
+	margin-bottom: 5px;
+}
+
+section div.content_box {
+	background-color: rgb(127, 145, 177);
+
+	min-height: fit-content;
+	min-height: fit-content;
+	max-width: max-content;
+	max-height: max-content;
+
+	border-radius: 8px;
+	padding: 20px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 25px;
+
+	box-shadow: 15px 15px 9px rgba(0, 0, 0, 0.589);
+}
+
+/* Per azzerare il margine inferiore di ogni ultimo elemento dentro una content_box */
+section > div.content_box > :last-child:nth-last-of-type(n) {
+	margin-bottom: 0;
+}
+
+h3.subsection_heading {
+	font-weight: bold;
+
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+div.content_box p {
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+div.content_box ul p {
+	margin-bottom: 0;
+}
+
+div.content_box img {
+	width: 70vw;
+	max-width: 500px;
+	background-color: chartreuse;
+}
+
+div.content_box pre.code_block {
+	padding: 10px;
+	margin: 0;
+	margin-bottom: 25px;
+	border-radius: 10px;
+
+	overflow-x: auto;
+}
+
+/* -- Per il video responsivo -- */
+div.responsive_iframe_outer_container {
+	width: 100%;
+	margin-bottom: 20px;
+	background-color: chartreuse;
+}
+
+/* Per il video nelle .content_box */
+div.content_box div.responsive_iframe_outer_container {
+	width: 70vw;
+	max-width: 600px;
+}
+
+div.responsive_iframe_outer_container > div.responsive_iframe_inner_container {
+	position: relative;
+	overflow: hidden;
+
+	width: 100%;
+
+	/* padding-top: 56.25%; */
+	aspect-ratio: 16 / 9; /* Dicono non funzioni ovunque */
+}
+
+div.responsive_iframe_outer_container > div.responsive_iframe_inner_container > iframe.responsive_iframe {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	width: 100%;
+	height: 100%;
+}
+/* ----------------------------- */
+
+button {
+	background-color: rgb(0, 0, 0);
+	color: #ffffff;
+
+	border-radius: 9px;
+	border-width: 0;
+	/* box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.589); */
+
+	padding: 7px;
+	margin-bottom: 15px;
+}
+
+button:hover {
+	transition: all 0.5s;
+
+	background-color: #3b3b3b;
+}
+
+a.button {
+	text-decoration: none;
+	background-color: rgb(0, 0, 0);
+	color: #ffffff;
+
+	border-radius: 9px;
+	border-width: 0;
+
+	padding: 7px;
+	margin-bottom: 15px;
+}
+
+py-terminal {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.flex_box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin: 20px 0;
+}
+
+.social_link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+	background-color: #000000;
+	color: #ffffff;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 20px;
+}
+
+.social_link:hover {
+	background-color: #3b3b3b;
+	width: 60px;
+	height: 60px;
+
+	transition: all 0.5s;
+}
+
+footer {
+	background-color: rgb(0, 22, 46);
+	color: #fff;
+
+	text-align: center;
+
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	width: 100%;
+}

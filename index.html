@@ -1,12 +1,292 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
+		<!--Meta tags-->
 		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Personal Website by Poison_8o8." />
+
+		<!-- Titolo della pagina -->
 		<title>Poison's Site</title>
+
+		<!-- Icona della pagina -->
+		<link href="/Resources/P.ico" rel="icon" type="image/x-icon" />
+
+		<!-- CSS -->
+		<link href="/Resources/style.css" rel="stylesheet" type="text/css" />
+
+		<style></style>
+
+		<!--JavaScript-->
+		<script></script>
+
+		<!-- Per evidenziare la sintassi: (https://cdnjs.com/libraries/prism/1.29.0) -->
+		<!-- CSS per evidenziare la sintassi -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+			integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+
+		<!-- JavaScript per evidenziare la sintassi -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"></script>
+
+		<!-- Python -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+			integrity="sha512-AKaNmg8COK0zEbjTdMHJAPJ0z6VeNqvRvH4/d5M4sHJbQQUToMBtodq4HaV4fa+WV2UTfoperElm66c9/8cKmQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"></script>
+
+		<!-- Per le icone dei social -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 	</head>
 
 	<body>
-		<h1>Hello World</h1>
+		<header>
+			<h1 class="main_title">Poison's Site</h1>
+			<h2 class="subtitle">Portafoglio</h2>
+		</header>
+
+		<main>
+			<section id="section_1">
+				<h2 id="section_1_heading" class="section_heading">Presentazione</h2>
+				<div class="content_box">
+					<h3 class="subsection_heading">Chi sono?</h3>
+					<p>
+						Sono un ragazzo italiano di diciotto anni appassionato di musica e sopratutto
+						<strong>informatica</strong>.<br />Frequento le scuole superiori e spesso occupo il mio tempo libero
+						programmando e imparando cose nuove.
+					</p>
+
+					<p>
+						Il mio principale linguaggio è il
+						<strong>Python</strong>, ma conosco anche un po di <strong>HTML</strong>, <strong>CSS</strong> (la
+						via per le arti oscure è lunga e travagliata), <strong>JavaScript</strong> (fores il mio linguaggio
+						<a href="https://slengo.it/define/schiferito">schiferito</a>) e il buon vecchio <strong>C</strong>.
+					</p>
+					<h3 class="subsection_heading">A cosa lavoro?</h3>
+					<p>
+						Attualmente sviluppo progetti principalmente didattici e ho iniziato a mettere le mani un po ovunque:
+						<strong>Web Scraping</strong>, <strong>Discord Bot</strong>, <strong>Pagine Web</strong> statiche,
+						<strong>Data Manipulation</strong>, <strong>Videogiochi</strong> e molto altro.<br /><br />
+						<em>Che strano niente intelligenza artificiale</em>
+					</p>
+				</div>
+			</section>
+
+			<section id="section_2">
+				<h2 id="section_2_heading" class="section_heading">Progetti</h2>
+				<h3 class="section_subtitle">I progetti che sto attualmente sviluppando</h3>
+				<div class="content_box">
+					<h3 id="Gmsci_heading" class="subsection_heading">Groups Management System for Console Interfaces</h3>
+					<p>
+						Un giorno nella mia classe servivano dei gruppi casuali per le interrogazioni programmate.<br />
+						Quindi ho deciso di creare questo programma che nel corso del tempo ho sviluppato e migliorato.
+					</p>
+					<p>
+						Il programma è provvisoriamente testabile:
+						<a class="button" href="./Projects/Gmsci/Gmsci.html">Qui</a><br /><br />
+
+						Il <strong>codice sorgente</strong> è disponibile a questa
+						<a href="https://github.com/Bot1-Pzon/Groups_Management_System_for_Console_Interfaces">repository</a
+						>.
+					</p>
+
+					<p>le features disponibili sono:</p>
+					<ul>
+						<li><span>Registrare un elemento.</span></li>
+						<li><span>Modificare una registrazione.</span></li>
+						<li><span>Eliminare una registrazione.</span></li>
+						<li><span>Visualizzare le registrazione effettuate.</span></li>
+						<li>
+							<span>
+								Generare e visualizzare dei gruppi casuali formati dagli elementi precedentemente registrati.
+							</span>
+						</li>
+					</ul>
+
+					<p>Immagine del menu principale:</p>
+					<img src="./Resources/menu_gmsci.png" alt="Menu dell'applicazione su una console." />
+				</div>
+
+				<div class="content_box">
+					<h3 id="Poison_utils_hading" class="subsection_heading">Poison's Utilities</h3>
+					<p>Il mio modulo in sviluppo</p>
+					<p>Un piccolo spoiler:</p>
+
+					<button
+						id="hiding_button_1"
+						class="hiding_button"
+						onclick="hide_element('code_block_1');"
+						style="display: none">
+						Nascondi
+					</button>
+
+					<!-- Bottone per minimizzare il codice -->
+					<!-- TODO: Fixare il bottom-margin -->
+					<button id="showing_button_1" class="showing_button" onclick="show_element('code_block_1')">
+						Mostra
+					</button>
+
+					<!-- Bottone per estendere il codice -->
+					<script>
+						// Funzione per nascondere il codice.
+						function hide_element(element_to_hide_id) {
+							let code_block = document.getElementById(element_to_hide_id);
+							let hiding_button = document.getElementById("hiding_button_1");
+							let showing_button = document.getElementById("showing_button_1");
+
+							code_block.style.display = "none";
+							hiding_button.style.display = "none";
+							showing_button.style.display = "block";
+
+							console.log(`Nascosto l'elemento di id: "${element_to_hide_id}".`);
+						}
+
+						// Funzione per mostrare il codice.
+						function show_element(element_to_show_id) {
+							let code_block = document.getElementById(element_to_show_id);
+							let hiding_button = document.getElementById("hiding_button_1");
+							let showing_button = document.getElementById("showing_button_1");
+
+							code_block.style.display = "block";
+							hiding_button_1.style.display = "block";
+							showing_button_1.style.display = "none";
+
+							console.log(`Mostrato l'elemento di id: "${element_to_show_id}".`);
+						}
+					</script>
+
+					<pre id="code_block_1" class="code_block" style="display: none"><code class="language-python"
+>"""
+Poison's Utilities
+-
+Modulo con varie funzionalità creato da Poison_8o8.
+"""
+
+import os, sys
+
+from random import randint
+
+from datetime import datetime
+
+# =============================================== #
+
+class Colors:
+	...
+
+# =============================================== #
+
+class Console:
+
+	def error() -> None:
+		...
+
+	def fatal_error() -> None:
+		...
+
+	def config() -> None:
+		...
+
+	def log() -> None:
+		...
+
+	def stop() -> None:
+		...
+
+	def clear() -> None:
+		...
+
+	def del_lines() -> None:
+		...
+
+	def function_timer() -> None:
+		...
+
+	class Cursor:
+
+		def move_to() -> None:
+			...
+
+		def reset() -> None:
+			...
+
+# =============================================== #
+
+class Web_kit:
+
+	def config() -> None:
+		...
+
+
+	def page_render() -> str:
+		...
+
+# =============================================== #
+
+def factorial() -> int:
+	...
+
+# =============================================== #
+
+def create_random_list() -> list:
+	...
+
+# =============================================== #
+
+
+"""
+Ain't it hard to stumble
+and land in the wrong side of the lagoon,
+ain't it hard to stumble
+and hope that death didn't get you so soon.
+
+- Poison_8o8
+"""
+</code></pre>
+				</div>
+
+				<div class="content_box">
+					<h3 id="portfolio_heading" class="subsection_heading">Il mio Portfolio</h3>
+					<p>Questa pagina. <br />Non è molto lo so, ma non sono uno sviluppatore web.</p>
+				</div>
+			</section>
+
+			<section id="section_3">
+				<h2 id="section_3_heading" class="section_heading">Indice</h2>
+				<div class="content_box">
+					<h3 class="subsection_heading">Pagina</h3>
+					<ul>
+						<li><a href="#section_1">Presentazione</a>.</li>
+						<li><a href="#section_2">Progetti</a>.</li>
+						<li><a href="#section_3">Indice</a>.</li>
+					</ul>
+					<h3 class="subsection_heading">Progetti</h3>
+					<ul>
+						<li><a href="#Gmsci_heading">Groups Management System for Console Interfaces</a>.</li>
+						<li><a href="#Poison_utils_hading">Poison's Utilities</a>.</li>
+						<li><a href="#portfolio_heading">Poison's Portfolio</a>.</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="flex_box">
+				<a href="https://discord.gg/GA7hh9ddWm" class="social_link" target="_blank">
+					<i class="fab fa-discord"></i>
+				</a>
+				<a href="https://github.com/Bot1-Pzon" class="social_link" target="_blank">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+			<p>&copy; 2024 Poison_8o8</p>
+		</footer>
 	</body>
 </html>

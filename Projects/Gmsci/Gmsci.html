@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<!--Meta tags-->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Personal Website by Poison_8o8." />
+
+		<!-- Titolo della pagina -->
+		<title>Poison's Site | Groups Management System for Console Interfaces</title>
+
+		<!-- Icona della pagina -->
+		<link href="/Resources/P.ico" rel="icon" type="image/x-icon" />
+
+		<!-- CSS -->
+		<link href="/Resources/style.css" rel="stylesheet" type="text/css" />
+
+		<!-- Script per PyScript -->
+		<script type="module" src="https://pyscript.net/releases/2024.6.1/core.js"></script>
+
+		<!-- CSS per PyScript -->
+		<link rel="stylesheet" href="https://pyscript.net/releases/2024.6.1/core.css" />
+
+		<!-- Mini Coi.js per i workers di PyScript -->
+		<script src="./mini-coi.js" scope="./"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1 class="main_title">Poison's Site</h1>
+			<h2 class="subtitle">Groups Management System for Console Interfaces</h2>
+		</header>
+		<main>
+			<section id="section_1">
+				<h2 id="section_1_heading" class="section_heading">Groups Management System for Console Interfaces</h2>
+				<script class="pyscript_terminal" type="py" src="./Gmsci.py" config="./config.toml" terminal worker></script>
+				<!-- TODO: Levare il prima possibile lo stile in linea -->
+				<a
+					style="
+						display: block;
+
+						max-width: fit-content;
+
+						font-size: 25px;
+						color: white;
+						background-color: red;
+						padding: 5px;
+						border-radius: 5px;
+						margin-bottom: 20px;
+					"
+					>!!&nbsp;Attenzione Sperimentale&nbsp;!!</a
+				>
+
+				<div class="content_box">
+					<p>
+						Le modifiche effettuate andranno perse una volta ricaricata la pagina.
+						<br />
+						Si consiglia l'uso di dispositivi di visualizzazione della pagina con dimensioni schermo generose.
+						<br /><br />
+						<a class="button" href="/index.html">Torna indietro</a>
+					</p>
+				</div>
+			</section>
+			<div style="height: 20vh"></div>
+		</main>
+		<footer>
+			<p>&copy; 2024 Poison_8o8</p>
+		</footer>
+	</body>
+</html>

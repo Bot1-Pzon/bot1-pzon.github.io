@@ -24,6 +24,9 @@
 
 		<!-- Mini Coi.js per i workers di PyScript -->
 		<script src="./mini-coi.js" scope="./"></script>
+
+		<!-- Per le icone dei social -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 	</head>
 
 	<body>
@@ -36,21 +39,7 @@
 				<h2 id="section_1_heading" class="section_heading">Groups Management System for Console Interfaces</h2>
 				<script class="pyscript_terminal" type="py" src="./Gmsci.py" config="./config.toml" terminal worker></script>
 				<!-- TODO: Levare il prima possibile lo stile in linea -->
-				<a
-					style="
-						display: block;
-
-						max-width: fit-content;
-
-						font-size: 25px;
-						color: white;
-						background-color: red;
-						padding: 5px;
-						border-radius: 5px;
-						margin-bottom: 20px;
-					"
-					>!!&nbsp;Attenzione Sperimentale&nbsp;!!</a
-				>
+				<span class="warning_label">!!&nbsp;Attenzione Sperimentale&nbsp;!!</span>
 
 				<div class="content_box">
 					<p>
@@ -65,6 +54,14 @@
 			<div style="height: 20vh"></div>
 		</main>
 		<footer>
+			<div class="flex_box">
+				<a href="https://discord.gg/GA7hh9ddWm" class="social_link" target="_blank">
+					<i class="fab fa-discord"></i>
+				</a>
+				<a href="https://github.com/Bot1-Pzon" class="social_link" target="_blank">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
 			<p>&copy; 2024 Poison_8o8</p>
 		</footer>
 	</body>

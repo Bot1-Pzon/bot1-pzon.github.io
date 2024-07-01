@@ -24,6 +24,7 @@
 		<!-- Per evidenziare la sintassi: (https://cdnjs.com/libraries/prism/1.29.0) -->
 		<!-- CSS per evidenziare la sintassi -->
 		<link
+			id="prism_css"
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
 			integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
@@ -75,7 +76,7 @@
 						Attualmente sviluppo progetti principalmente didattici e ho iniziato a mettere le mani un po ovunque:
 						<strong>Web Scraping</strong>, <strong>Discord Bot</strong>, <strong>Pagine Web</strong> statiche,
 						<strong>Data Manipulation</strong>, <strong>Videogiochi</strong> e molto altro.<br /><br />
-						<em>Che strano niente intelligenza artificiale</em>
+						<em>Che strano niente intelligenza artificiale</em>.
 					</p>
 				</div>
 			</section>
@@ -128,13 +129,13 @@
 						Nascondi
 					</button>
 
-					<!-- Bottone per minimizzare il codice -->
+					<!-- Bottone per mostrare/nascondere il codice -->
 					<!-- TODO: Fixare il bottom-margin -->
 					<button id="showing_button_1" class="showing_button" onclick="show_element('code_block_1')">
 						Mostra
 					</button>
 
-					<!-- Bottone per estendere il codice -->
+					<!-- Script per mostrare/nascondere il codice -->
 					<script>
 						// Funzione per nascondere il codice.
 						function hide_element(element_to_hide_id) {
@@ -254,7 +255,92 @@ and hope that death didn't get you so soon.
 
 				<div class="content_box">
 					<h3 id="portfolio_heading" class="subsection_heading">Il mio Portfolio</h3>
-					<p>Questa pagina. <br />Non è molto lo so, ma non sono uno sviluppatore web.</p>
+					<p>
+						Questa pagina. <br />Non è molto lo so, ma non sono uno sviluppatore web.<br /><br />
+						Ma potete comunque cambiare tema alla pagina:
+					</p>
+					<select id="theme_selector" onchange="change_theme(this.value)">
+						<option value="poisons_theme">Poison's Theme</option>
+						<option value="light">Light</option>
+						<option value="dark">Dark</option>
+					</select>
+
+					<!-- Script per cambiare il tema -->
+					<script>
+						const root = document.querySelector(":root");
+
+						// Seleziona il tema memorizzato nel local storage del browser o imposta il tema predefinito
+						const selected_theme = localStorage.getItem("memoized_theme") || "poisons_theme";
+						change_theme(selected_theme);
+
+						// Funzione per cambiare il tema
+						function change_theme(theme) {
+							let theme_preset = {
+								"--body_color": "",
+								"--content_color": "",
+
+								"--extremes_background_color": "",
+								"--extremes_content_color": "",
+
+								"--main_color": "",
+								"--content_box_color": "",
+
+								"--button_background_color": "",
+								"--button_content_color": "",
+								"--button_color_hover": "",
+							};
+
+							if (theme === "light") {
+								// Impostazione del tema chiaro:
+
+								theme_preset = {
+									"--body_color": "rgb(123, 165, 190)",
+									"--content_color": "black",
+
+									"--extremes_background_color": "rgb(69, 121, 177)",
+									"--extremes_content_color": "white",
+
+									"--main_color": "rgb(79, 142, 146)",
+									"--content_box_color": "rgb(141, 181, 184)",
+
+									"--button_background_color": "rgb(6, 94, 42)",
+									"--button_content_color": "white",
+									"--button_color_hover": "rgb(56, 189, 112)",
+								};
+								console.log('Tema impostato in: "chiaro".');
+							} else if (theme === "dark") {
+								// Impostazione del tema scuro:
+
+								theme_preset = {
+									"--body_color": "black",
+									"--content_color": "rgb(211, 211, 211)",
+
+									"--extremes_background_color": "rgb(56, 56, 56)",
+									"--extremes_content_color": "white",
+
+									"--main_color": "rgb(83, 83, 83)",
+									"--content_box_color": "rgb(41, 41, 41)",
+
+									"--button_background_color": "black",
+									"--button_content_color": "white",
+									"--button_color_hover": "gray",
+								};
+
+								console.log("Tema impostato in: scuro.");
+							} else if (theme === "poisons_theme") {
+								// Impostazione del tema più bello di tutti:
+
+								console.log("Tema impostato in: Poison's Theme.");
+							}
+
+							for (let property in theme_preset) {
+								root.style.setProperty(property, theme_preset[property]);
+							}
+
+							// Memorizza la selezione del tema nel local storage del browser
+							localStorage.setItem("memoized_theme", theme);
+						}
+					</script>
 				</div>
 			</section>
 

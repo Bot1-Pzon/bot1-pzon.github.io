@@ -1,13 +1,34 @@
+:root {
+	/* Colori */
+	--body_color: rgb(8, 53, 95); /* Colore sfondo */
+	--content_color: black;
+
+	--extremes_background_color: rgb(0, 22, 46); /* Colore <header> e <footer> */
+	--extremes_content_color: white;
+
+	--main_color: rgb(64, 87, 126); /* Colore <main> */
+	--content_box_color: rgb(127, 145, 177); /* Colore <div> contenitore */
+
+	--button_background_color: black;
+	--button_content_color: white;
+	--button_color_hover: gray;
+	--button_padding: 6px;
+	--button_bottom_margin: 10px;
+
+	--debug_color: chartreuse;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: rgb(8, 53, 95);
+	background-color: var(--body_color);
+	color: var(--content_color);
 }
 
 header {
-	background-color: rgb(0, 22, 46);
-	color: #fff;
+	background-color: var(--extremes_background_color);
+	color: var(--extremes_content_color);
 
 	text-align: center;
 
@@ -20,14 +41,11 @@ header {
 
 /* Per il titolo principale */
 h1.main_title {
-	color: black;
-	-webkit-text-stroke-width: 0.1px;
-	-webkit-text-stroke-color: white;
+	-webkit-text-stroke-width: 0.5px;
 
 	text-align: center;
 
 	font-size: 65px;
-	font-family: "Impact";
 
 	margin-top: 0;
 	margin-bottom: 0;
@@ -41,7 +59,7 @@ h1.main_title + h2.subtitle {
 }
 
 main {
-	background-color: rgb(64, 87, 126);
+	background-color: var(--main_color);
 	box-shadow: 0 0 100px rgba(0, 0, 0, 0.932);
 
 	padding-top: 50px;
@@ -98,7 +116,7 @@ h2.section_heading:not(:last-child):has(+ h3.section_subtitle) {
 }
 
 section div.content_box {
-	background-color: rgb(127, 145, 177);
+	background-color: var(--content_box_color);
 
 	min-height: fit-content;
 	min-height: fit-content;
@@ -138,7 +156,7 @@ div.content_box ul p {
 div.content_box img {
 	width: 70vw;
 	max-width: 500px;
-	background-color: chartreuse;
+	background-color: var(--debug_color);
 }
 
 div.content_box pre.code_block {
@@ -154,7 +172,7 @@ div.content_box pre.code_block {
 div.responsive_iframe_outer_container {
 	width: 100%;
 	margin-bottom: 20px;
-	background-color: chartreuse;
+	background-color: var(--debug_color);
 }
 
 /* Per il video nelle .content_box */
@@ -186,36 +204,6 @@ div.responsive_iframe_outer_container > div.responsive_iframe_inner_container > 
 }
 /* ----------------------------- */
 
-button {
-	background-color: rgb(0, 0, 0);
-	color: #ffffff;
-
-	border-radius: 9px;
-	border-width: 0;
-	/* box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.589); */
-
-	padding: 7px;
-	margin-bottom: 15px;
-}
-
-button:hover {
-	transition: all 0.5s;
-
-	background-color: #3b3b3b;
-}
-
-a.button {
-	text-decoration: none;
-	background-color: rgb(0, 0, 0);
-	color: #ffffff;
-
-	border-radius: 9px;
-	border-width: 0;
-
-	padding: 7px;
-	margin-bottom: 15px;
-}
-
 py-terminal {
 	display: block;
 	overflow: hidden;
@@ -228,17 +216,16 @@ py-terminal {
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	margin: 20px 0;
 }
 
-.social_link {
+a.social_link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
 
-	background-color: #000000;
-	color: #ffffff;
+	background-color: var(--button_background_color);
+	color: var(--button_content_color);
 
 	width: 50px;
 	height: 50px;
@@ -246,17 +233,74 @@ py-terminal {
 	font-size: 20px;
 }
 
-.social_link:hover {
-	background-color: #3b3b3b;
+a.social_link:hover {
+	background-color: var(--button_color_hover);
 	width: 60px;
 	height: 60px;
+
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+button,
+a.button {
+	background-color: var(--button_background_color);
+	text-decoration: none;
+	color: var(--button_content_color);
+
+	border-radius: 9px;
+	border-width: 0;
+
+	padding: var(--button_padding);
+	margin-bottom: var(--button_bottom_margin);
+}
+
+button:hover,
+a.button:hover {
+	transition: all 0.5s;
+
+	background-color: var(--button_color_hover);
+	cursor: pointer;
+}
+
+select {
+	background-color: var(--button_background_color);
+	color: var(--button_content_color);
+
+	cursor: pointer;
+
+	border-radius: 9px;
+
+	padding: var(--button_padding);
+	margin-bottom: var(--button_bottom_margin);
+}
+
+select:hover {
+	background-color: var(--button_color_hover);
 
 	transition: all 0.5s;
 }
 
+span.warning_label {
+	display: block;
+
+	max-width: fit-content;
+
+	font-size: 25px;
+	color: white;
+	background-color: red;
+	padding: var(--button_padding);
+	border-radius: 10px;
+	margin-bottom: var(--button_bottom_margin);
+}
+
+span.warning_label:hover {
+	cursor: not-allowed;
+}
+
 footer {
-	background-color: rgb(0, 22, 46);
-	color: #fff;
+	background-color: var(--extremes_background_color);
+	color: var(--extremes_content_color);
 
 	text-align: center;
 

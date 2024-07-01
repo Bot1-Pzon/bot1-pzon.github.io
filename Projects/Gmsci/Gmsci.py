@@ -62,10 +62,7 @@ def file_initialization() -> None:
 	register_file_name = "register.txt"
 	register_file_path = path.join(ambient_path, register_file_name)
 
-	file_check = None
-
-	register = eval("""
-{
+	register = {
 	0: {'name': 'Mike', 'surname': 'Bloomfield'},
 	1: {'name': 'René', 'surname': 'Descartes'},
 	2: {'name': 'Bob', 'surname': 'Dylan'},
@@ -73,8 +70,7 @@ def file_initialization() -> None:
 	4: {'name': 'Piero', 'surname': 'Guerra'},
 	5: {'name': 'Antoine', 'surname': 'Lavoisier'},
 	6: {'name': 'Sam', 'surname': 'Lightnin hopkins'}
-}
-""")
+	}
 
 
 # Funzione di sovrascrizione del file
@@ -271,8 +267,7 @@ def groups_printing() -> None:
 	global groups_list
 
 	terminal_clear()
-	print(f"\n  {Col.bold}| {Col.fg.blue}Gruppi{Col.reset}{Col.bold} |{Col.reset}")
-	print()
+	print(f"\n  {Col.bold}| {Col.fg.blue}Gruppi{Col.reset}{Col.bold} |{Col.reset}\n")
 
 	for group in groups_list:
 		print(f"  {Col.bold}{Col.fg.blue}", end="")

@@ -116,55 +116,27 @@
 					<img src="./Resources/menu_gmsci.png" alt="Menu dell'applicazione su una console." />
 				</div>
 
-				<div class="content_box">
-					<h3 id="Poison_utils_hading" class="subsection_heading">Poison's Utilities</h3>
-					<p>Il mio modulo in sviluppo</p>
-					<p>Un piccolo spoiler:</p>
+				<div class="flex_box container">
+					<div class="content_box">
+						<h3 id="Poison_utils_hading" class="subsection_heading">Poison's Utilities</h3>
+						<p>Il mio modulo in sviluppo</p>
+						<p>Un piccolo spoiler:</p>
 
-					<button
-						id="hiding_button_1"
-						class="hiding_button"
-						onclick="hide_element('code_block_1');"
-						style="display: none">
-						Nascondi
-					</button>
+						<button
+							id="hiding_button_1"
+							class="hiding_button"
+							onclick="hide_element('code_block_1');"
+							style="display: none">
+							Nascondi
+						</button>
 
-					<!-- Bottone per mostrare/nascondere il codice -->
-					<!-- TODO: Fixare il bottom-margin -->
-					<button id="showing_button_1" class="showing_button" onclick="show_element('code_block_1')">
-						Mostra
-					</button>
+						<!-- Bottone per mostrare/nascondere il codice -->
+						<!-- TODO: Fixare il bottom-margin -->
+						<button id="showing_button_1" class="showing_button" onclick="show_element('code_block_1')">
+							Mostra
+						</button>
 
-					<!-- Script per mostrare/nascondere il codice -->
-					<script>
-						// Funzione per nascondere il codice.
-						function hide_element(element_to_hide_id) {
-							let code_block = document.getElementById(element_to_hide_id);
-							let hiding_button = document.getElementById("hiding_button_1");
-							let showing_button = document.getElementById("showing_button_1");
-
-							code_block.style.display = "none";
-							hiding_button.style.display = "none";
-							showing_button.style.display = "block";
-
-							console.log(`Nascosto l'elemento di id: "${element_to_hide_id}".`);
-						}
-
-						// Funzione per mostrare il codice.
-						function show_element(element_to_show_id) {
-							let code_block = document.getElementById(element_to_show_id);
-							let hiding_button = document.getElementById("hiding_button_1");
-							let showing_button = document.getElementById("showing_button_1");
-
-							code_block.style.display = "block";
-							hiding_button_1.style.display = "block";
-							showing_button_1.style.display = "none";
-
-							console.log(`Mostrato l'elemento di id: "${element_to_show_id}".`);
-						}
-					</script>
-
-					<pre id="code_block_1" class="code_block" style="display: none"><code class="language-python"
+						<pre id="code_block_1" class="code_block" style="display: none"><code class="language-python"
 >"""
 Poison's Utilities
 -
@@ -251,120 +223,72 @@ and hope that death didn't get you so soon.
 - Poison_8o8
 """
 </code></pre>
-				</div>
+					</div>
 
-				<div class="content_box">
-					<h3 id="portfolio_heading" class="subsection_heading">Il mio Portfolio</h3>
-					<p>
-						Questa pagina. <br />Non è molto lo so, ma non sono uno sviluppatore web.<br /><br />
-						Ma potete comunque cambiare tema alla pagina:
-					</p>
-					<select id="theme_selector" onchange="change_theme(this.value)">
-						<option value="poisons_theme">Poison's Theme</option>
-						<option value="light">Light</option>
-						<option value="dark">Dark</option>
-					</select>
-
-					<!-- Script per cambiare il tema -->
-					<script>
-						const root = document.querySelector(":root");
-
-						// Seleziona il tema memorizzato nel local storage del browser o imposta il tema predefinito
-						const selected_theme = localStorage.getItem("memoized_theme") || "poisons_theme";
-						change_theme(selected_theme);
-
-						// Funzione per cambiare il tema
-						function change_theme(theme) {
-							let theme_preset = {
-								"--body_color": "",
-								"--content_color": "",
-
-								"--extremes_background_color": "",
-								"--extremes_content_color": "",
-
-								"--main_color": "",
-								"--content_box_color": "",
-
-								"--button_background_color": "",
-								"--button_content_color": "",
-								"--button_color_hover": "",
-							};
-
-							if (theme === "light") {
-								// Impostazione del tema chiaro:
-
-								theme_preset = {
-									"--body_color": "rgb(123, 165, 190)",
-									"--content_color": "black",
-
-									"--extremes_background_color": "rgb(69, 121, 177)",
-									"--extremes_content_color": "white",
-
-									"--main_color": "rgb(79, 142, 146)",
-									"--content_box_color": "rgb(141, 181, 184)",
-
-									"--button_background_color": "rgb(6, 94, 42)",
-									"--button_content_color": "white",
-									"--button_color_hover": "rgb(56, 189, 112)",
-								};
-								console.log('Tema impostato in: "chiaro".');
-							} else if (theme === "dark") {
-								// Impostazione del tema scuro:
-
-								theme_preset = {
-									"--body_color": "black",
-									"--content_color": "rgb(211, 211, 211)",
-
-									"--extremes_background_color": "rgb(56, 56, 56)",
-									"--extremes_content_color": "white",
-
-									"--main_color": "rgb(83, 83, 83)",
-									"--content_box_color": "rgb(41, 41, 41)",
-
-									"--button_background_color": "black",
-									"--button_content_color": "white",
-									"--button_color_hover": "gray",
-								};
-
-								console.log("Tema impostato in: scuro.");
-							} else if (theme === "poisons_theme") {
-								// Impostazione del tema più bello di tutti:
-
-								console.log("Tema impostato in: Poison's Theme.");
-							}
-
-							for (let property in theme_preset) {
-								root.style.setProperty(property, theme_preset[property]);
-							}
-
-							// Memorizza la selezione del tema nel local storage del browser
-							localStorage.setItem("memoized_theme", theme);
-						}
-					</script>
+					<div class="content_box">
+						<h3 id="portfolio_heading" class="subsection_heading">Il mio Portfolio</h3>
+						<p>
+							Questa pagina. <br />Non è molto lo so, ma non sono uno sviluppatore web.<br /><br />
+							Ma potete comunque cambiare tema alla pagina:
+						</p>
+						<select id="theme_selector" onchange="change_theme(this.value)">
+							<option value="poisons_theme">Poison's Theme</option>
+							<option value="light">Light</option>
+							<option value="dark">Dark</option>
+						</select>
+					</div>
 				</div>
 			</section>
 
 			<section id="section_3">
 				<h2 id="section_3_heading" class="section_heading">Indice</h2>
-				<div class="content_box">
-					<h3 class="subsection_heading">Pagina</h3>
-					<ul>
-						<li><a href="#section_1">Presentazione</a>.</li>
-						<li><a href="#section_2">Progetti</a>.</li>
-						<li><a href="#section_3">Indice</a>.</li>
-					</ul>
-					<h3 class="subsection_heading">Progetti</h3>
-					<ul>
-						<li><a href="#Gmsci_heading">Groups Management System for Console Interfaces</a>.</li>
-						<li><a href="#Poison_utils_hading">Poison's Utilities</a>.</li>
-						<li><a href="#portfolio_heading">Poison's Portfolio</a>.</li>
-					</ul>
+				<div class="flex_box container">
+					<div class="content_box">
+						<h3 class="subsection_heading">Pagina</h3>
+						<ul>
+							<li><a href="#section_1">Presentazione</a>.</li>
+							<li><a href="#section_2">Progetti</a>.</li>
+							<li><a href="#section_3">Indice</a>.</li>
+						</ul>
+						<h3 class="subsection_heading">Progetti</h3>
+						<ul>
+							<li><a href="#Gmsci_heading">Groups Management System for Console Interfaces</a>.</li>
+							<li><a href="#Poison_utils_hading">Poison's Utilities</a>.</li>
+							<li><a href="#portfolio_heading">Poison's Portfolio</a>.</li>
+						</ul>
+					</div>
+					<button
+						id="seecret_button"
+						onclick="hide_all_children('main'); show_element('section_4')"
+						style="
+							background-color: inherit;
+							width: 100px;
+							height: 100px;
+							margin: 0;
+							margin-left: 40px;
+							margin-bottom: -150px;
+						"></button>
+				</div>
+			</section>
+			<section id="section_4" style="display: none">
+				<div class="responsive_iframe_outer_container">
+					<div class="responsive_iframe_inner_container">
+						<iframe
+							class="responsive_iframe"
+							title="YouTube video player"
+							src="https://www.youtube.com/embed/QPfsUlFxhrI?si=JVN5TVsj5Tj1cEh9"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen>
+						</iframe>
+					</div>
 				</div>
 			</section>
 		</main>
 
 		<footer>
-			<div class="flex_box">
+			<div class="flex_box centered">
 				<a href="https://discord.gg/GA7hh9ddWm" class="social_link" target="_blank">
 					<i class="fab fa-discord"></i>
 				</a>
@@ -375,4 +299,115 @@ and hope that death didn't get you so soon.
 			<p>&copy; 2024 Poison_8o8</p>
 		</footer>
 	</body>
+	<script>
+		const root = document.querySelector(":root");
+
+		// Seleziona il tema memorizzato nel local storage del browser o imposta il tema predefinito
+		const selected_theme = localStorage.getItem("memoized_theme") || "poisons_theme";
+		change_theme(selected_theme);
+
+		// Funzione per cambiare il tema
+		function change_theme(theme) {
+			let theme_preset = {
+				"--body_color": "",
+				"--content_color": "",
+
+				"--extremes_background_color": "",
+				"--extremes_content_color": "",
+
+				"--main_color": "",
+				"--content_box_color": "",
+
+				"--button_background_color": "",
+				"--button_content_color": "",
+				"--button_color_hover": "",
+			};
+
+			if (theme === "light") {
+				// Impostazione del tema chiaro:
+
+				theme_preset = {
+					"--body_color": "rgb(123, 165, 190)",
+					"--content_color": "black",
+
+					"--extremes_background_color": "rgb(69, 121, 177)",
+					"--extremes_content_color": "white",
+
+					"--main_color": "rgb(79, 142, 146)",
+					"--content_box_color": "rgb(141, 181, 184)",
+
+					"--button_background_color": "rgb(6, 94, 42)",
+					"--button_content_color": "white",
+					"--button_color_hover": "rgb(56, 189, 112)",
+				};
+				console.log('Tema impostato in: "chiaro".');
+			} else if (theme === "dark") {
+				// Impostazione del tema scuro:
+
+				theme_preset = {
+					"--body_color": "black",
+					"--content_color": "rgb(211, 211, 211)",
+
+					"--extremes_background_color": "rgb(56, 56, 56)",
+					"--extremes_content_color": "white",
+
+					"--main_color": "rgb(83, 83, 83)",
+					"--content_box_color": "rgb(41, 41, 41)",
+
+					"--button_background_color": "black",
+					"--button_content_color": "white",
+					"--button_color_hover": "gray",
+				};
+
+				console.log("Tema impostato in: scuro.");
+			} else if (theme === "poisons_theme") {
+				// Impostazione del tema più bello di tutti:
+
+				console.log("Tema impostato in: Poison's Theme.");
+			}
+
+			for (let property in theme_preset) {
+				root.style.setProperty(property, theme_preset[property]);
+			}
+
+			// Memorizza la selezione del tema nel local storage del browser
+			localStorage.setItem("memoized_theme", theme);
+		}
+
+		// Funzione per nascondere il codice.
+		function hide_element(element_to_hide_id) {
+			let element_to_hid = document.getElementById(element_to_hide_id);
+			let hiding_button = document.getElementById("hiding_button_1");
+			let showing_button = document.getElementById("showing_button_1");
+
+			element_to_hid.style.display = "none";
+			hiding_button.style.display = "none";
+			showing_button.style.display = "block";
+
+			console.log(`Nascosto l'elemento di id: "${element_to_hide_id}".`);
+		}
+
+		// Funzione per mostrare il codice.
+		function show_element(element_to_show_id) {
+			let element_to_show = document.getElementById(element_to_show_id);
+			let hiding_button = document.getElementById("hiding_button_1");
+			let showing_button = document.getElementById("showing_button_1");
+
+			element_to_show.style.display = "block";
+			hiding_button_1.style.display = "block";
+			showing_button_1.style.display = "none";
+
+			console.log(`Mostrato l'elemento di id: "${element_to_show_id}".`);
+		}
+
+		// Funzione per nascondere tutti i figli.
+		function hide_all_children(element_name) {
+			const children = document.querySelector(element_name).children;
+			for (let i = 0; i < children.length; i++) {
+				children[i].style.display = "none";
+			}
+		}
+
+		console.log("Pagina caricata.");
+	</script>
 </html>

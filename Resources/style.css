@@ -118,10 +118,8 @@ h2.section_heading:not(:last-child):has(+ h3.section_subtitle) {
 section div.content_box {
 	background-color: var(--content_box_color);
 
-	min-height: fit-content;
-	min-height: fit-content;
-	max-width: max-content;
-	max-height: max-content;
+	height: fit-content;
+	width: fit-content;
 
 	border-radius: 8px;
 	padding: 20px;
@@ -207,14 +205,37 @@ div.responsive_iframe_outer_container > div.responsive_iframe_inner_container > 
 py-terminal {
 	display: block;
 	overflow: hidden;
+
 	margin-bottom: 25px;
 }
 
-.flex_box {
+div.flex_box {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+div.flex_box.container {
+	display: flex;
+	flex-wrap: wrap;
+
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 25px;
+
+	gap: 20px;
+}
+
+div.flex_box.container > div.content_box {
+	margin: 0;
+}
+
+div.flex_box.centered {
+	display: flex;
+	flex-wrap: wrap;
+
 	justify-content: center;
 	align-items: center;
+
 	gap: 10px;
 }
 

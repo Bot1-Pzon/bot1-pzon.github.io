@@ -231,7 +231,10 @@ and hope that death didn't get you so soon.
 							Questa pagina. <br />Non è molto lo so, ma non sono uno sviluppatore web.<br /><br />
 							Ma potete comunque cambiare tema alla pagina:
 						</p>
-						<select id="theme_selector" onchange="change_theme(this.value)">
+						<select
+							id="theme_selector"
+							aria-label="Scegli il tema della pagina:"
+							onchange="change_theme(this.value)">
 							<option value="poisons_theme">Poison's Theme</option>
 							<option value="light">Light</option>
 							<option value="dark">Dark</option>
@@ -260,6 +263,7 @@ and hope that death didn't get you so soon.
 					<button
 						id="seecret_button"
 						onclick="hide_all_children('main'); show_element('section_4')"
+						aria-label="Bottone segreto"
 						style="
 							background-color: inherit;
 							width: 100px;
@@ -289,10 +293,10 @@ and hope that death didn't get you so soon.
 
 		<footer>
 			<div class="flex_box centered">
-				<a href="https://discord.gg/GA7hh9ddWm" class="social_link" target="_blank">
+				<a href="https://discord.gg/GA7hh9ddWm" class="social_link" aria-label="Discord" target="_blank">
 					<i class="fab fa-discord"></i>
 				</a>
-				<a href="https://github.com/Bot1-Pzon" class="social_link" target="_blank">
+				<a href="https://github.com/Bot1-Pzon" class="social_link" aria-label="GitHub" target="_blank">
 					<i class="fab fa-github"></i>
 				</a>
 			</div>

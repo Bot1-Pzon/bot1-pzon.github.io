@@ -243,6 +243,27 @@ and hope that death didn't get you so soon.
 				</div>
 			</section>
 
+			<section id="secret_section" style="display: none; margin: 0">
+				<div class="responsive_iframe_outer_container">
+					<div class="responsive_iframe_inner_container">
+						<iframe
+							class="responsive_iframe"
+							title="YouTube video player"
+							src="https://www.youtube.com/embed/QPfsUlFxhrI?si=JVN5TVsj5Tj1cEh9"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+				<div class="flex_box centered">
+					<span class="warning_label" onclick="reload_page(); warning('La pagina verrà ricaricata')"
+						>Ricarica la pagina</span
+					>
+				</div>
+			</section>
+
 			<section id="section_3">
 				<h2 id="section_3_heading" class="section_heading">Indice</h2>
 				<div class="flex_box container">
@@ -262,7 +283,7 @@ and hope that death didn't get you so soon.
 					</div>
 					<button
 						id="seecret_button"
-						onclick="hide_all_children('main'); show_element('section_4')"
+						onclick="hide_all_children('main'); show_element('secret_section')"
 						aria-label="Bottone segreto"
 						style="
 							background-color: inherit;
@@ -272,21 +293,6 @@ and hope that death didn't get you so soon.
 							margin-left: 40px;
 							margin-bottom: -150px;
 						"></button>
-				</div>
-			</section>
-			<section id="section_4" style="display: none">
-				<div class="responsive_iframe_outer_container">
-					<div class="responsive_iframe_inner_container">
-						<iframe
-							class="responsive_iframe"
-							title="YouTube video player"
-							src="https://www.youtube.com/embed/QPfsUlFxhrI?si=JVN5TVsj5Tj1cEh9"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen>
-						</iframe>
-					</div>
 				</div>
 			</section>
 		</main>
@@ -378,11 +384,11 @@ and hope that death didn't get you so soon.
 			localStorage.setItem("memoized_theme", theme);
 		}
 
-		// Funzione per nascondere il codice.
+		// Funzione per nascondere un elemento.
 		function hide_element(element_to_hide_id) {
-			let element_to_hid = document.getElementById(element_to_hide_id);
-			let hiding_button = document.getElementById("hiding_button_1");
-			let showing_button = document.getElementById("showing_button_1");
+			const element_to_hid = document.getElementById(element_to_hide_id);
+			const hiding_button = document.getElementById("hiding_button_1");
+			const showing_button = document.getElementById("showing_button_1");
 
 			element_to_hid.style.display = "none";
 			hiding_button.style.display = "none";
@@ -391,11 +397,11 @@ and hope that death didn't get you so soon.
 			console.log(`Nascosto l'elemento di id: "${element_to_hide_id}".`);
 		}
 
-		// Funzione per mostrare il codice.
+		// Funzione per mostrare un elemento.
 		function show_element(element_to_show_id) {
-			let element_to_show = document.getElementById(element_to_show_id);
-			let hiding_button = document.getElementById("hiding_button_1");
-			let showing_button = document.getElementById("showing_button_1");
+			const element_to_show = document.getElementById(element_to_show_id);
+			const hiding_button = document.getElementById("hiding_button_1");
+			const showing_button = document.getElementById("showing_button_1");
 
 			element_to_show.style.display = "block";
 			hiding_button_1.style.display = "block";
@@ -410,6 +416,15 @@ and hope that death didn't get you so soon.
 			for (let i = 0; i < children.length; i++) {
 				children[i].style.display = "none";
 			}
+		}
+
+		// Funzione per avvisare l'utente.
+		function warning(warning_message) {
+			alert(warning_message);
+		}
+
+		function reload_page() {
+			location.reload();
 		}
 
 		console.log("Pagina caricata.");

@@ -33,7 +33,7 @@ Cons.config()	# Se si desiderano attivare il log e il debug.
 # Funzione di pulizia della schermo
 def terminal_clear() -> None:
 
-	__terminal__.clear()
+	__terminal__.clear()	# type: ignore
 
 # Funzione di pulizia della schermo secondo input
 def screen_clear() -> None:

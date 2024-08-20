@@ -96,7 +96,7 @@ section > :last-child:nth-last-of-type(n) {
 /* Per i titoli di sezione */
 section > h2.section_heading {
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 35px;
 
 	margin-top: 0;
 	margin-bottom: 20px;
@@ -136,10 +136,11 @@ section > div.content_box > :last-child:nth-last-of-type(n) {
 }
 
 h3.subsection_heading {
+	font-size: 23px;
 	font-weight: bold;
 
 	margin-top: 0;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 div.content_box p {
@@ -202,6 +203,7 @@ div.responsive_iframe_outer_container > div.responsive_iframe_inner_container > 
 }
 /* ----------------------------- */
 
+/* Per il terminale di PyScript */
 py-terminal {
 	display: block;
 	overflow: hidden;
